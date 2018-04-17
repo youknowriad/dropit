@@ -1,4 +1,4 @@
-.splash-sidebar-photo-list__photo {
+.splash-sidebar-photo {
   position: relative;
   display: block;
   margin: 15px;
@@ -34,7 +34,7 @@
   }
 }
 
-.splash-sidebar-photo-list__photo-toolbar {
+.splash-sidebar-photo__toolbar {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -51,5 +51,21 @@
       opacity: 1;
       box-shadow: inherit;
     }
+  }
+}
+
+.splash-sidebar-photo__spinner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(#fff, 0.5);
+
+  .spinner {
+    opacity: 1;
   }
 }
