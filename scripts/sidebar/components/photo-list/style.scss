@@ -1,0 +1,23 @@
+.splash-sidebar-photo-list__search-form {
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  align-items: stretch;
+  border: 1px solid #eee;
+
+  input {
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    border-right: 1px solid #eee;
+    z-index: 1;
+  }
+
+  .components-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 0;
+    border: none;
+  }
+}

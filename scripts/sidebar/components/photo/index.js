@@ -25,7 +25,7 @@ class PhotoList extends Component {
           photo.user.username
         }?utm_source=wpsplash&utm_medium=referral`}
       >
-        ${photo.user.name}
+        {photo.user.name}
       </a>,
       " on ",
       <a

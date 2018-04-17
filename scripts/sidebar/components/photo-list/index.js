@@ -1,14 +1,19 @@
 import { Component } from "@wordpress/element";
+import { IconButton } from "@wordpress/components";
 
+import "./style.scss";
 import Photo from "../photo";
-import { getPhotos } from "../../api";
+import { getPhotos, searchPhotos } from "../../api";
 
 class PhotoList extends Component {
   constructor() {
     super(...arguments);
     this.state = {
-      photos: []
+      photos: [],
+      query: ""
     };
+    this.updateQuery = this.updateQuery.bind(this);
+    this.search = this.search.bind(this);
   }
 
   componentDidMount() {
@@ -17,10 +22,35 @@ class PhotoList extends Component {
     });
   }
 
+  updateQuery(event) {
+    this.setState({ query: event.target.value });
+  }
+
+  search(event) {
+    event.preventDefault();
+    searchPhotos(this.state.query).then(data => {
+      this.setState({ photos: data.results });
+    });
+  }
+
   render() {
-    const { photos } = this.state;
+    const { photos, query } = this.state;
     return (
-      <div>{photos.map(photo => <Photo key={photo.id} photo={photo} />)}</div>
+      <div>
+        <form
+          className="splash-sidebar-photo-list__search-form"
+          onSubmit={this.search}
+        >
+          <input
+            type="text"
+            value={query}
+            onChange={this.updateQuery}
+            placeholder="Search…"
+          />
+          <IconButton className="button" type="submit" icon="search" />
+        </form>
+        {photos.map(photo => <Photo key={photo.id} photo={photo} />)}
+      </div>
     );
   }
 }

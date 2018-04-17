@@ -6,6 +6,8 @@
   transition: all 0.15s ease-in-out;
   border-radius: 2px;
   cursor: pointer;
+  min-height: 150px;
+  background: #eee;
 
   &:hover {
     transform: scale(1.05);
