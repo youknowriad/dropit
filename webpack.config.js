@@ -49,7 +49,8 @@ const wpDependencies = [
   "data",
   "i18n",
   "editPost",
-  "plugins"
+  "plugins",
+  "apiRequest"
 ];
 wpDependencies.forEach(wpDependency => {
   externals["@wordpress/" + wpDependency] = {

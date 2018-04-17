@@ -9,7 +9,7 @@ function splash_sidebar_script_register() {
 	wp_register_script(
 		'splash-sidebar',
 		splash_url( 'scripts/sidebar/build/index.js' ),
-		array( 'wp-plugins', 'wp-element', 'wp-edit-post', 'wp-i18n', 'splash-i18n' ),
+		array( 'wp-plugins', 'wp-element', 'wp-edit-post', 'wp-i18n', 'wp-api-request', 'splash-i18n' ),
 		filemtime( splash_dir_path() . 'scripts/sidebar/build/index.js' ),
 		true
 	);

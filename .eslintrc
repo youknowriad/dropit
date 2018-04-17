@@ -16,7 +16,8 @@
   "globals": {
     "wp": true,
     "document": true,
-    "console": true
+    "console": true,
+    "window": true
   },
   "settings": {
     "react": {
