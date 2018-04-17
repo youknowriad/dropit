@@ -1,0 +1,6 @@
+{
+  "presets": ["@wordpress/default"],
+  "plugins": [
+    ["@wordpress/babel-plugin-makepot", { "output": "languages/splash.pot" }]
+  ]
+}

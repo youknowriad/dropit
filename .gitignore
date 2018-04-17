@@ -1,0 +1,6 @@
+scripts/*/build
+node_modules
+splash.zip
+.DS_Store
+svn
+languages
