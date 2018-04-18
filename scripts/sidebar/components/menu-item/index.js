@@ -1,16 +1,9 @@
-import { __experimental as experimentalAPI } from "@wordpress/editPost";
-
-const { PluginMoreMenuItem } = experimentalAPI;
+import { PluginSidebarMoreMenuItem } from "@wordpress/editPost";
 
 const MenuItem = () => (
-  <PluginMoreMenuItem
-    name="splash-menu-item"
-    icon="art"
-    type="sidebar"
-    target="splash-sidebar"
-  >
-    Open Splash
-  </PluginMoreMenuItem>
+  <PluginSidebarMoreMenuItem icon="art" target="splash-sidebar">
+    Splash Splash
+  </PluginSidebarMoreMenuItem>
 );
 
 export default MenuItem;
