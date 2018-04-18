@@ -1,5 +1,6 @@
 import { Component } from "@wordpress/element";
 import { IconButton } from "@wordpress/components";
+import { __ } from "@wordpress/i18n";
 
 import "./style.scss";
 import Photo from "../photo";
@@ -45,7 +46,7 @@ class PhotoList extends Component {
             type="text"
             value={query}
             onChange={this.updateQuery}
-            placeholder="Search…"
+            placeholder={__("Search…", "dropit")}
           />
           <IconButton className="button" type="submit" icon="search" />
         </form>

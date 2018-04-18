@@ -2,6 +2,7 @@ import { Component } from "@wordpress/element";
 import { IconButton, Spinner } from "@wordpress/components";
 import { createBlock } from "@wordpress/blocks";
 import { withDispatch } from "@wordpress/data";
+import { __ } from "@wordpress/i18n";
 
 import "./style.scss";
 import { downloadPhoto } from "../../api";
@@ -18,7 +19,7 @@ class PhotoList extends Component {
 
   getPhotoCaption(photo) {
     return [
-      "Photo by ",
+      __("Photo by", "dropit") + " ",
       <a
         key="link"
         href={`https://unsplash.com/@${
@@ -27,7 +28,7 @@ class PhotoList extends Component {
       >
         {photo.user.name}
       </a>,
-      " on ",
+      " " + __("on", "dropit") + " ",
       <a
         key="link2"
         href="https://unsplash.com/?utm_source=dropit&utm_medium=referral"
