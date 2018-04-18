@@ -8,15 +8,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gutenberg,media,unsplash,dropit
 Requires PHP: 5.2.4
 
-Drop it.
+Easily insert free photos from unsplash.com right from Gutenberg's sidebar.
 
 == Description ==
 
-Drop it.
+Drop it allows one click inserts/uploads of photos among the thousands of photos available on <a href="https://unsplash.com">unsplash.com</a> without leaving the Gutenberg editor.
 
 = Features =
 
- - Drop it
+ - One click image inserts from unsplash.com
+ - One click image uploads from unsplash.com
+ - Search available photos
+ - More sources to come...
 
 = How can I contribute? =
 
@@ -25,4 +28,4 @@ This plugin is being worked on in <a href="https://github.com/youknowriad/dropit
 == Changelog ==
 
 = 1.0.0 =
-* Drop it
+* Initial release
