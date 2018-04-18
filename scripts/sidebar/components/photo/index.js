@@ -81,8 +81,9 @@ class PhotoList extends Component {
   render() {
     const { photo } = this.props;
     const { loading } = this.state;
+    const style = { background: photo.color };
     return (
-      <div key={photo.id} className="splash-sidebar-photo">
+      <div key={photo.id} className="splash-sidebar-photo" style={style}>
         {loading && (
           <div className="splash-sidebar-photo__spinner-container">
             <Spinner />
