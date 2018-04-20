@@ -49,18 +49,18 @@ npm install
 status "Generating build..."
 npm run build
 status "Generating PHP file for wordpress.org to parse translations..."
-npx pot-to-php ./languages/splash.pot ./languages/splash-translations.php splash
+npx pot-to-php ./languages/dropit.pot ./languages/dropit-translations.php dropit
 
 # Remove any existing zip file
-rm -f splash.zip
+rm -f dropit.zip
 
 # Generate the plugin zip file
 status "Creating archive..."
-zip -r splash.zip \
-	splash.php \
+zip -r dropit.zip \
+	dropit.php \
 	lib/*.php \
 	scripts/{sidebar,i18n}/build/*.{js,css} \
-	languages/splash-translations.php \
+	languages/dropit-translations.php \
 	readme.txt
 
 status "Done."

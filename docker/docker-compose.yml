@@ -9,7 +9,7 @@ services:
     environment:
       WORDPRESS_DB_PASSWORD: example
     volumes:
-      - ../:/var/www/html/wp-content/plugins/splash
+      - ../:/var/www/html/wp-content/plugins/dropit
 
   mysql:
     image: mysql:5.7

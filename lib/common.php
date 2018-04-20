@@ -3,16 +3,16 @@
 /**
  * Retrieves the root plugin path.
  *
- * @return string Root path to the splash plugin.
+ * @return string Root path to the drop it plugin.
  *
  * @since 1.0.0
  */
-function splash_dir_path() {
+function dropit_dir_path() {
 	return plugin_dir_path( dirname(__FILE__ ) );
 }
 
 /**
- * Retrieves a URL to a file in the splash plugin.
+ * Retrieves a URL to a file in the drop it plugin.
  *
  * @param  string $path Relative path of the desired file.
  *
@@ -20,6 +20,6 @@ function splash_dir_path() {
  *
  * @since 1.0.0
  */
-function splash_url( $path ) {
+function dropit_url( $path ) {
 	return plugins_url( $path, dirname( __FILE__ ) );
 }

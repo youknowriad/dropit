@@ -38,7 +38,7 @@ class PhotoList extends Component {
     return (
       <div>
         <form
-          className="splash-sidebar-photo-list__search-form"
+          className="dropit-sidebar-photo-list__search-form"
           onSubmit={this.search}
         >
           <input

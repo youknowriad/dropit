@@ -1,6 +1,6 @@
 scripts/*/build
 node_modules
-splash.zip
+dropit.zip
 .DS_Store
 svn
 languages

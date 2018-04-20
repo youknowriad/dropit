@@ -9,7 +9,7 @@
  *
  * @return array
  */
-function splash_get_jed_locale_data( $domain ) {
+function dropit_get_jed_locale_data( $domain ) {
 	$translations = get_translations_for_domain( $domain );
 
 	$locale = array(
@@ -35,19 +35,19 @@ function splash_get_jed_locale_data( $domain ) {
  *
  * @since 1.0.0
  */
-function splash_i18n_register() {
-	$locale_data = splash_get_jed_locale_data( 'splash' );
-	$content = 'wp.i18n.setLocaleData( ' . json_encode( $locale_data ) . ', "splash" );';
+function dropit_i18n_register() {
+	$locale_data = dropit_get_jed_locale_data( 'dropit' );
+	$content = 'wp.i18n.setLocaleData( ' . json_encode( $locale_data ) . ', "dropit" );';
 
 	wp_register_script(
-		'splash-i18n',
-		splash_url( 'scripts/i18n/build/index.js' ),
+		'dropit-i18n',
+		dropit_url( 'scripts/i18n/build/index.js' ),
 		array( 'wp-i18n' ),
-		filemtime( splash_dir_path() . 'scripts/i18n/build/index.js' )
+		filemtime( dropit_dir_path() . 'scripts/i18n/build/index.js' )
 	);
-	wp_add_inline_script( 'splash-i18n', $content );
+	wp_add_inline_script( 'dropit-i18n', $content );
 }
-add_action( 'init', 'splash_i18n_register' );
+add_action( 'init', 'dropit_i18n_register' );
 
 
 /**
@@ -55,11 +55,11 @@ add_action( 'init', 'splash_i18n_register' );
  *
  * @since 1.0.0
  */
-function splash_load_plugin_textdomain() {
+function dropit_load_plugin_textdomain() {
 	load_plugin_textdomain(
-		'splash',
+		'dropit',
 		false,
-		plugin_basename( splash_dir_path() ) . '/languages/'
+		plugin_basename( dropit_dir_path() ) . '/languages/'
 	);
 }
-add_action( 'plugins_loaded', 'splash_load_plugin_textdomain' );
+add_action( 'plugins_loaded', 'dropit_load_plugin_textdomain' );

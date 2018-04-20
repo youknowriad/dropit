@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: Splash
- * Plugin URI: https://github.com/youknowriad/splash
- * Description: Splash
+ * Plugin Name: Drop it
+ * Plugin URI: https://github.com/youknowriad/dropit
+ * Description: Drop it
  * Version: 1.0.0
- * Text Domain: splash
+ * Text Domain: dropit
  * Domain Path: /languages
  * Author: Riad Benguella
  *
- * @package splash
+ * @package dropit
  */
 
  // Some common utilities

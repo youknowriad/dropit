@@ -35,8 +35,8 @@ const externals = {
   react: "React"
 };
 entryPointNames.forEach(entryPointName => {
-  externals["@splash/" + entryPointName] = {
-    this: ["splash", entryPointName]
+  externals["@dropit/" + entryPointName] = {
+    this: ["dropit", entryPointName]
   };
 });
 
@@ -67,7 +67,7 @@ const config = {
   output: {
     filename: "scripts/[name]/build/index.js",
     path: __dirname,
-    library: ["splash", "[name]"],
+    library: ["dropit", "[name]"],
     libraryTarget: "this"
   },
   resolve: {

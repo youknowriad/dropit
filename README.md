@@ -1,7 +1,7 @@
-# Splash
+# Drop it
 
-Splash.
+Drop it.
 
 ### Features
 
-* Splash.
+* Drop it.

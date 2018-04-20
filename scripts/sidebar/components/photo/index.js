@@ -23,14 +23,14 @@ class PhotoList extends Component {
         key="link"
         href={`https://unsplash.com/@${
           photo.user.username
-        }?utm_source=wpsplash&utm_medium=referral`}
+        }?utm_source=dropit&utm_medium=referral`}
       >
         {photo.user.name}
       </a>,
       " on ",
       <a
         key="link2"
-        href="https://unsplash.com/?utm_source=wpsplash&utm_medium=referral"
+        href="https://unsplash.com/?utm_source=dropit&utm_medium=referral"
       >
         Unsplash
       </a>
@@ -83,15 +83,15 @@ class PhotoList extends Component {
     const { loading } = this.state;
     const style = { background: photo.color };
     return (
-      <div key={photo.id} className="splash-sidebar-photo" style={style}>
+      <div key={photo.id} className="dropit-sidebar-photo" style={style}>
         {loading && (
-          <div className="splash-sidebar-photo__spinner-container">
+          <div className="dropit-sidebar-photo__spinner-container">
             <Spinner />
           </div>
         )}
         <img src={photo.urls.small} />
         {!loading && (
-          <div className="splash-sidebar-photo__toolbar">
+          <div className="dropit-sidebar-photo__toolbar">
             <IconButton
               className="button"
               icon="upload"

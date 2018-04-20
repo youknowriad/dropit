@@ -6,13 +6,13 @@ import { registerPlugin } from "@wordpress/plugins";
 import Sidebar from "./components/sidebar";
 import MenuItem from "./components/menu-item";
 
-const SplashPlugin = () => (
+const DropitPlugin = () => (
   <Fragment>
     <Sidebar />
     <MenuItem />
   </Fragment>
 );
 
-registerPlugin("splash", {
-  render: SplashPlugin
+registerPlugin("dropit", {
+  render: DropitPlugin
 });
