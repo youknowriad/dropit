@@ -1,15 +1,19 @@
-import "./style.scss";
-
 import { Fragment } from "@wordpress/element";
 import { registerPlugin } from "@wordpress/plugins";
 
-import Sidebar from "./components/sidebar";
-import MenuItem from "./components/menu-item";
+import "./style.scss";
+import "./store";
+import UnsplashSidebar from "./components/unsplash/sidebar";
+import UnsplashMenuItem from "./components/unsplash/menu-item";
+import GdocsSidebar from "./components/gdocs/sidebar";
+import GdocsMenuItem from "./components/gdocs/menu-item";
 
 const DropitPlugin = () => (
   <Fragment>
-    <Sidebar />
-    <MenuItem />
+    <UnsplashSidebar />
+    <UnsplashMenuItem />
+    <GdocsSidebar />
+    <GdocsMenuItem />
   </Fragment>
 );
 

@@ -4,7 +4,7 @@ import { __ } from "@wordpress/i18n";
 
 import "./style.scss";
 import Photo from "../photo";
-import { getPhotos, searchPhotos } from "../../api";
+import { getPhotos, searchPhotos } from "../../../api";
 
 class PhotoList extends Component {
   constructor() {

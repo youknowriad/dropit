@@ -1,6 +1,7 @@
 {
   "presets": ["@wordpress/default"],
   "plugins": [
-    ["@wordpress/babel-plugin-makepot", { "output": "languages/dropit.pot" }]
+    ["@wordpress/babel-plugin-makepot", { "output": "languages/dropit.pot" }],
+    ["transform-async-generator-functions"]
   ]
 }

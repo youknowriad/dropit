@@ -5,7 +5,7 @@ import { withDispatch } from "@wordpress/data";
 import { __ } from "@wordpress/i18n";
 
 import "./style.scss";
-import { downloadPhoto } from "../../api";
+import { downloadPhoto } from "../../../api";
 
 class PhotoList extends Component {
   constructor() {

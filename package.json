@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@wordpress/url": "^1.1.0",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4"
   },
@@ -21,6 +22,7 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-async-generator-functions": "^6.24.1",
     "cross-env": "^5.1.1",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
@@ -34,5 +36,7 @@
     "sass-loader": "^6.0.6",
     "webpack": "^3.8.1"
   },
-  "browserslist": ["extends @wordpress/browserslist-config"]
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ]
 }

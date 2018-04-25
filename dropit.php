@@ -17,3 +17,8 @@ require_once dirname( __FILE__ ) . '/lib/common.php';
 // Registering Script Files
 require_once dirname( __FILE__ ) . '/lib/i18n-script.php';
 require_once dirname( __FILE__ ) . '/lib/sidebar-script.php';
+
+// Keyring
+require_once dirname( __FILE__ ) . '/lib/keyring-google.php';
+require_once dirname( __FILE__ ) . '/lib/keyring-proxy-endpoint.php';
+require_once dirname( __FILE__ ) . '/lib/keyring-service-ready-endpoint.php';
