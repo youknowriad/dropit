@@ -97,8 +97,14 @@ class PhotoList extends Component {
               className="button"
               icon="upload"
               onClick={this.uploadPhoto}
+              label={__("Upload photo", "dropit")}
             />
-            <IconButton isPrimary icon="plus" onClick={this.addPhoto} />
+            <IconButton
+              isPrimary
+              icon="plus"
+              onClick={this.addPhoto}
+              label={__("Add photo", "dropit")}
+            />
           </div>
         )}
       </div>

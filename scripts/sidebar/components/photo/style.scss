@@ -48,10 +48,19 @@
   .components-icon-button {
     display: inline-flex;
     opacity: 0.5;
+    box-shadow: none !important;
+    border: none !important;
+
+    &.button-primary {
+      color: #fff !important;
+    }
+
+    .dashicons-plus {
+      padding-top: 2px;
+    }
 
     &:hover {
       opacity: 1;
-      box-shadow: inherit;
     }
   }
 }
