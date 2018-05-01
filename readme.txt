@@ -25,6 +25,10 @@ Drop it allows one click inserts/uploads of photos among the thousands of photos
 
 This plugin is being worked on in <a href="https://github.com/youknowriad/dropit">GitHub</a>
 
+== Screenshots ==
+
+1. Photos from unsplash.com
+
 == Changelog ==
 
 = 1.0.0 =
