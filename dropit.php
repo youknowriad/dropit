@@ -3,7 +3,7 @@
  * Plugin Name: Drop it
  * Plugin URI: https://github.com/youknowriad/dropit
  * Description: Easily insert free photos from unsplash.com right from Gutenberg's sidebar.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Text Domain: dropit
  * Domain Path: /languages
  * Author: Riad Benguella

@@ -2,7 +2,7 @@
 Contributors: youknowriad
 Requires at least: 4.8
 Tested up to: 4.9
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gutenberg,media,unsplash,dropit
@@ -30,6 +30,9 @@ This plugin is being worked on in <a href="https://github.com/youknowriad/dropit
 1. Photos from unsplash.com
 
 == Changelog ==
+
+= 1.1.0 =
+* Adding the pinning support (custom icon)
 
 = 1.0.0 =
 * Initial release
