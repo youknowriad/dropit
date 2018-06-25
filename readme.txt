@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gutenberg,media,unsplash,dropit
 Requires PHP: 5.2.4
 
-Easily insert free photos from unsplash.com right from Gutenberg's sidebar.
+Easily insert free photos from unsplash.com and gif from giphy.com right from Gutenberg's sidebar.
 
 == Description ==
 
@@ -19,6 +19,7 @@ Drop it allows one click inserts/uploads of photos among the thousands of photos
  - One click image inserts from unsplash.com
  - One click image uploads from unsplash.com
  - Search available photos
+ - The same on Giphy.com
  - More sources to come...
 
 = How can I contribute? =

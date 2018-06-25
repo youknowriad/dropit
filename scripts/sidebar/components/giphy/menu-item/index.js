@@ -1,11 +1,14 @@
 import { PluginSidebarMoreMenuItem } from "@wordpress/editPost";
 import { __ } from "@wordpress/i18n";
 
-import Icon from "../icon";
+import Icon from "../../icon";
 
 const MenuItem = () => (
-  <PluginSidebarMoreMenuItem icon={<Icon borderless />} target="dropit-sidebar">
-    {__("Photos from Unsplash.com", "dropit")}
+  <PluginSidebarMoreMenuItem
+    icon={<Icon borderless color="giphy" />}
+    target="dropit-giphy-sidebar"
+  >
+    {__("GIFs from Giphy.com", "dropit")}
   </PluginSidebarMoreMenuItem>
 );
 

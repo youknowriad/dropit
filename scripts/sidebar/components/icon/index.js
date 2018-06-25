@@ -67,9 +67,15 @@ const iconBackgroundless = (
   </svg>
 );
 
-function Icon({ size = "small", borderless = false }) {
+function Icon({ size = "small", borderless = false, color = "unsplash" }) {
   return (
-    <span className={classnames("dropit-sidebar-icon", "is-" + size)}>
+    <span
+      className={classnames(
+        "dropit-sidebar-icon",
+        "is-" + size,
+        "color-" + color
+      )}
+    >
       {borderless ? iconBackgroundless : icon}
     </span>
   );

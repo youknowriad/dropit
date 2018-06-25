@@ -4,7 +4,6 @@ import { __ } from "@wordpress/i18n";
 
 import "./style.scss";
 import Photo from "../photo";
-import { getPhotos, searchPhotos } from "../../api";
 
 class PhotoList extends Component {
   constructor() {
@@ -18,7 +17,7 @@ class PhotoList extends Component {
   }
 
   componentDidMount() {
-    getPhotos().then(photos => {
+    this.props.api.all().then(photos => {
       this.setState({ photos });
     });
   }
@@ -29,13 +28,14 @@ class PhotoList extends Component {
 
   search(event) {
     event.preventDefault();
-    searchPhotos(this.state.query).then(data => {
-      this.setState({ photos: data.results });
+    this.props.api.search(this.state.query).then(photos => {
+      this.setState({ photos });
     });
   }
 
   render() {
     const { photos, query } = this.state;
+    const { api } = this.props;
     return (
       <div>
         <form
@@ -50,7 +50,13 @@ class PhotoList extends Component {
           />
           <IconButton className="button" type="submit" icon="search" />
         </form>
-        {photos.map(photo => <Photo key={photo.id} photo={photo} />)}
+        {photos.map(photo => (
+          <Photo
+            key={photo.id}
+            photo={photo}
+            api={{ download: api.download }}
+          />
+        ))}
       </div>
     );
   }

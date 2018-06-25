@@ -3,16 +3,20 @@ import "./style.scss";
 import { Fragment } from "@wordpress/element";
 import { registerPlugin } from "@wordpress/plugins";
 
-import Sidebar from "./components/sidebar";
-import MenuItem from "./components/menu-item";
+import SidebarUnsplash from "./components/unsplash/sidebar";
+import SidebarGiphy from "./components/giphy/sidebar";
+import MenuItemUnsplash from "./components/unsplash/menu-item";
+import MenuItemGiphy from "./components/giphy/menu-item";
 
-const DropitPlugin = () => (
+const Dropit = () => (
   <Fragment>
-    <Sidebar />
-    <MenuItem />
+    <SidebarUnsplash />
+    <MenuItemUnsplash />
+    <SidebarGiphy />
+    <MenuItemGiphy />
   </Fragment>
 );
 
 registerPlugin("dropit", {
-  render: DropitPlugin
+  render: Dropit
 });

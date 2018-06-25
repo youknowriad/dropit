@@ -8,3 +8,32 @@
   height: 20px;
   width: 20px;
 }
+
+.dropit-sidebar-icon.color-unsplash,
+.dropit-sidebar-icon.color-unsplash path,
+.dropit-sidebar-icon.color-unsplash g {
+  stroke: #0d9375 !important;
+  fill: #0d9375 !important;
+}
+
+.dropit-sidebar-icon.color-giphy,
+.dropit-sidebar-icon.color-giphy path,
+.dropit-sidebar-icon.color-giphy g {
+  stroke: #6460f6 !important;
+  fill: #6460f6 !important;
+}
+
+.edit-post-header
+  .components-button.is-toggled:not(:hover)
+  .dropit-sidebar-icon.is-small,
+.edit-post-header
+  .components-button.is-toggled:not(:hover)
+  .dropit-sidebar-icon
+  path,
+.edit-post-header
+  .components-button.is-toggled:not(:hover)
+  .dropit-sidebar-icon
+  g {
+  stroke: #fff !important;
+  fill: #fff !important;
+}

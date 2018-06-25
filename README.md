@@ -1,6 +1,6 @@
 # Drop it
 
-Drop it allows one click inserts/uploads of photos among the thousands of photos available on <a href="https://unsplash.com">unsplash.com</a> without leaving the Gutenberg editor.
+Drop it allows one click inserts/uploads of photos among the thousands of photos available on <a href="https://unsplash.com">unsplash.com</a> and <a href="https://giphy.com">Giphy.com</a>without leaving the Gutenberg editor.
 
 ## Install
 

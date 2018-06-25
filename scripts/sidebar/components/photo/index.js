@@ -5,9 +5,8 @@ import { withDispatch } from "@wordpress/data";
 import { __ } from "@wordpress/i18n";
 
 import "./style.scss";
-import { downloadPhoto } from "../../api";
 
-class PhotoList extends Component {
+class Photo extends Component {
   constructor() {
     super(...arguments);
     this.addPhoto = this.addPhoto.bind(this);
@@ -18,22 +17,17 @@ class PhotoList extends Component {
   }
 
   getPhotoCaption(photo) {
+    if (!photo.authorLink || !photo.siteLink) {
+      return [];
+    }
     return [
       __("Photo by", "dropit") + " ",
-      <a
-        key="link"
-        href={`https://unsplash.com/@${
-          photo.user.username
-        }?utm_source=dropit&utm_medium=referral`}
-      >
-        {photo.user.name}
+      <a key="link" href={photo.authorLink}>
+        {photo.authorName}
       </a>,
       " " + __("on", "dropit") + " ",
-      <a
-        key="link2"
-        href="https://unsplash.com/?utm_source=dropit&utm_medium=referral"
-      >
-        Unsplash
+      <a key="link2" href={photo.siteLink}>
+        {photo.siteName}
       </a>
     ];
   }
@@ -41,8 +35,9 @@ class PhotoList extends Component {
   addPhoto() {
     const { photo } = this.props;
     const block = createBlock("core/image", {
-      url: photo.urls.regular,
-      caption: this.getPhotoCaption(photo)
+      url: photo.viewLink,
+      caption: this.getPhotoCaption(photo),
+      alt: photo.title
     });
     this.props.insertBlock(block);
   }
@@ -63,24 +58,27 @@ class PhotoList extends Component {
     };
     this.setState({ loading: true });
 
-    downloadPhoto(photo.links.download_location, photo.id, {
-      type: "image/jpeg"
-    }).then(file => {
-      createMediaFromFile(file).then(image => {
-        const block = createBlock("core/image", {
-          id: image.id,
-          url: image.source_url,
-          link: image.link,
-          caption: this.getPhotoCaption(photo)
+    this.props.api
+      .download(photo.downloadLink, photo.id, {
+        type: photo.mimeType
+      })
+      .then(file => {
+        createMediaFromFile(file).then(image => {
+          const block = createBlock("core/image", {
+            id: image.id,
+            url: image.source_url,
+            link: image.link,
+            caption: this.getPhotoCaption(photo),
+            alt: photo.title
+          });
+          this.props.insertBlock(block);
+          this.setState({ loading: false });
         });
-        this.props.insertBlock(block);
-        this.setState({ loading: false });
       });
-    });
   }
 
   render() {
-    const { photo } = this.props;
+    const { photo, api } = this.props;
     const { loading } = this.state;
     const style = { background: photo.color };
     return (
@@ -90,15 +88,17 @@ class PhotoList extends Component {
             <Spinner />
           </div>
         )}
-        <img src={photo.urls.small} />
+        <img src={photo.thumbnailLink} />
         {!loading && (
           <div className="dropit-sidebar-photo__toolbar">
-            <IconButton
-              className="button"
-              icon="upload"
-              onClick={this.uploadPhoto}
-              label={__("Upload photo", "dropit")}
-            />
+            {api.download && (
+              <IconButton
+                className="button"
+                icon="upload"
+                onClick={this.uploadPhoto}
+                label={__("Upload photo", "dropit")}
+              />
+            )}
             <IconButton
               isPrimary
               icon="plus"
@@ -114,4 +114,4 @@ class PhotoList extends Component {
 
 export default withDispatch(dispatch => ({
   insertBlock: dispatch("core/editor").insertBlock
-}))(PhotoList);
+}))(Photo);
