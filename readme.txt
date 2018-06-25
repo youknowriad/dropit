@@ -2,13 +2,13 @@
 Contributors: youknowriad
 Requires at least: 4.8
 Tested up to: 4.9
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gutenberg,media,unsplash,dropit
 Requires PHP: 5.2.4
 
-Easily insert free photos from unsplash.com and gif from giphy.com right from Gutenberg's sidebar.
+Easily insert free photos from unsplash.com and gifs from Giphy.com right from Gutenberg's sidebar.
 
 == Description ==
 
@@ -16,10 +16,9 @@ Drop it allows one click inserts/uploads of photos among the thousands of photos
 
 = Features =
 
- - One click image inserts from unsplash.com
+ - One click image inserts from unsplash.com or Giphy.com
  - One click image uploads from unsplash.com
- - Search available photos
- - The same on Giphy.com
+ - Search available photos/gifs
  - More sources to come...
 
 = How can I contribute? =
@@ -31,6 +30,9 @@ This plugin is being worked on in <a href="https://github.com/youknowriad/dropit
 1. Photos from unsplash.com
 
 == Changelog ==
+
+= 1.2.0 =
+* Adding Giphy Support
 
 = 1.1.0 =
 * Adding the pinning support (custom icon)

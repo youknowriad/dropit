@@ -14,7 +14,7 @@ Clone this repository to the wp-content/plugins folder of your WordPress install
 
 ## Features
 
-* One click image inserts from unsplash.com
+* One click image inserts from unsplash.com or Giphy.com
 * One click image uploads from unsplash.com
-* Search available photos
+* Search available photos/gifs
 * More sources to come...
