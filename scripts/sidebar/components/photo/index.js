@@ -1,8 +1,9 @@
-import { Component } from "@wordpress/element";
+import { Component, compose } from "@wordpress/element";
 import { IconButton, Spinner } from "@wordpress/components";
 import { createBlock } from "@wordpress/blocks";
-import { withDispatch } from "@wordpress/data";
+import { withDispatch, withSelect } from "@wordpress/data";
 import { __ } from "@wordpress/i18n";
+import { PostFeaturedImageCheck } from "@wordpress/editor";
 
 import "./style.scss";
 
@@ -10,9 +11,11 @@ class Photo extends Component {
   constructor() {
     super(...arguments);
     this.addPhoto = this.addPhoto.bind(this);
-    this.uploadPhoto = this.uploadPhoto.bind(this);
+    this.uploadAndInsertPhoto = this.uploadAndInsertPhoto.bind(this);
+    this.useAsAFeaturedImage = this.useAsAFeaturedImage.bind(this);
     this.state = {
-      loading: false
+      loading: false,
+      image: null
     };
   }
 
@@ -43,6 +46,9 @@ class Photo extends Component {
   }
 
   uploadPhoto() {
+    if (this.state.image) {
+      return Promise.resolve(this.state.image);
+    }
     const { photo } = this.props;
     const createMediaFromFile = file => {
       // Create upload payload
@@ -58,28 +64,45 @@ class Photo extends Component {
     };
     this.setState({ loading: true });
 
-    this.props.api
+    return this.props.api
       .download(photo.downloadLink, photo.id, {
         type: photo.mimeType
       })
       .then(file => {
-        createMediaFromFile(file).then(image => {
-          const block = createBlock("core/image", {
-            id: image.id,
-            url: image.source_url,
-            link: image.link,
-            caption: this.getPhotoCaption(photo),
-            alt: photo.title
+        return createMediaFromFile(file).then(image => {
+          this.setState({
+            loading: false,
+            image
           });
-          this.props.insertBlock(block);
-          this.setState({ loading: false });
+
+          return image;
         });
       });
   }
 
+  uploadAndInsertPhoto() {
+    const { photo } = this.props;
+    this.uploadPhoto().then(image => {
+      const block = createBlock("core/image", {
+        id: image.id,
+        url: image.source_url,
+        link: image.link,
+        caption: this.getPhotoCaption(photo),
+        alt: photo.title
+      });
+      this.props.insertBlock(block);
+    });
+  }
+
+  useAsAFeaturedImage() {
+    this.uploadPhoto().then(image => {
+      this.props.updateFeaturedImage(image.id);
+    });
+  }
+
   render() {
-    const { photo, api } = this.props;
-    const { loading } = this.state;
+    const { photo, api, featuredImageId } = this.props;
+    const { loading, image } = this.state;
     const style = { background: photo.color };
     return (
       <div key={photo.id} className="dropit-sidebar-photo" style={style}>
@@ -92,10 +115,21 @@ class Photo extends Component {
         {!loading && (
           <div className="dropit-sidebar-photo__toolbar">
             {api.download && (
+              <PostFeaturedImageCheck>
+                <IconButton
+                  className="button"
+                  icon="format-image"
+                  onClick={this.useAsAFeaturedImage}
+                  label={__("Use a featured image", "dropit")}
+                  disabled={image && featuredImageId === image.id}
+                />
+              </PostFeaturedImageCheck>
+            )}
+            {api.download && (
               <IconButton
                 className="button"
                 icon="upload"
-                onClick={this.uploadPhoto}
+                onClick={this.uploadAndInsertPhoto}
                 label={__("Upload photo", "dropit")}
               />
             )}
@@ -112,6 +146,16 @@ class Photo extends Component {
   }
 }
 
-export default withDispatch(dispatch => ({
-  insertBlock: dispatch("core/editor").insertBlock
-}))(Photo);
+export default compose(
+  withSelect(select => ({
+    featuredImageId: select("core/editor").getEditedPostAttribute(
+      "featured_media"
+    )
+  })),
+  withDispatch(dispatch => ({
+    insertBlock: dispatch("core/editor").insertBlock,
+    updateFeaturedImage(imageId) {
+      dispatch("core/editor").editPost({ featured_media: imageId });
+    }
+  }))
+)(Photo);
