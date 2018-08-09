@@ -1,4 +1,4 @@
-import { Component } from "@wordpress/element";
+import { Component, createElement } from "@wordpress/element";
 import { IconButton, Spinner } from "@wordpress/components";
 import { createBlock } from "@wordpress/blocks";
 import { withDispatch, withSelect } from "@wordpress/data";

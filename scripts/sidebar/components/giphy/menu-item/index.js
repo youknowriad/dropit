@@ -1,3 +1,4 @@
+import { createElement } from "@wordpress/element";
 import { PluginSidebarMoreMenuItem } from "@wordpress/editPost";
 import { __ } from "@wordpress/i18n";
 

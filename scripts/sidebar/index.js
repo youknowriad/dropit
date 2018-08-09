@@ -1,6 +1,6 @@
 import "./style.scss";
 
-import { Fragment } from "@wordpress/element";
+import { Fragment, createElement } from "@wordpress/element";
 import { registerPlugin } from "@wordpress/plugins";
 
 import SidebarUnsplash from "./components/unsplash/sidebar";

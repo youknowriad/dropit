@@ -1,4 +1,4 @@
-import { Component } from "@wordpress/element";
+import { Component, createElement } from "@wordpress/element";
 import { IconButton } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 

@@ -1,3 +1,4 @@
+import { createElement } from "@wordpress/element";
 import { PluginSidebar } from "@wordpress/editPost";
 
 import PhotoList from "../../photo-list";
