@@ -1,9 +1,10 @@
-import { Component, compose } from "@wordpress/element";
+import { Component } from "@wordpress/element";
 import { IconButton, Spinner } from "@wordpress/components";
 import { createBlock } from "@wordpress/blocks";
 import { withDispatch, withSelect } from "@wordpress/data";
 import { __ } from "@wordpress/i18n";
 import { PostFeaturedImageCheck } from "@wordpress/editor";
+import { compose } from "@wordpress/compose";
 
 import "./style.scss";
 

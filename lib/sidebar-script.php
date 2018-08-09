@@ -9,7 +9,7 @@ function dropit_sidebar_script_register() {
 	wp_register_script(
 		'dropit-sidebar',
 		dropit_url( 'scripts/sidebar/build/index.js' ),
-		array( 'wp-plugins', 'wp-element', 'wp-edit-post', 'wp-i18n', 'wp-api-request', 'wp-data', 'wp-components', 'wp-blocks', 'wp-editor', 'dropit-i18n' ),
+		array( 'wp-plugins', 'wp-element', 'wp-edit-post', 'wp-i18n', 'wp-api-request', 'wp-data', 'wp-components', 'wp-blocks', 'wp-editor', 'wp-compose', 'dropit-i18n' ),
 		filemtime( dropit_dir_path() . 'scripts/sidebar/build/index.js' ),
 		true
 	);
