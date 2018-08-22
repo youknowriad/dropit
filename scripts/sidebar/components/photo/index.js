@@ -121,7 +121,7 @@ class Photo extends Component {
                   className="button"
                   icon="format-image"
                   onClick={this.useAsAFeaturedImage}
-                  label={__("Use a featured image", "dropit")}
+                  label={__("Use as featured image", "dropit")}
                   disabled={image && featuredImageId === image.id}
                 />
               </PostFeaturedImageCheck>
