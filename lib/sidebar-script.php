@@ -13,6 +13,9 @@ function dropit_sidebar_script_register() {
 		filemtime( dropit_dir_path() . 'scripts/sidebar/build/index.js' ),
 		true
 	);
+
+	wp_localize_script( 'dropit-sidebar', 'dropit_options', dropit_get_options() );
+
 	wp_register_style(
 		'dropit-sidebar',
 		dropit_url( 'scripts/sidebar/build/style.css' ),

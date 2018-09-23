@@ -8,7 +8,7 @@
  * @since 1.0.0
  */
 function dropit_dir_path() {
-	return plugin_dir_path( dirname(__FILE__ ) );
+	return plugin_dir_path( dirname( __FILE__ ) );
 }
 
 /**
@@ -22,4 +22,21 @@ function dropit_dir_path() {
  */
 function dropit_url( $path ) {
 	return plugins_url( $path, dirname( __FILE__ ) );
+}
+
+/**
+ * Get options set in admin page settings
+ * @return array
+ * @author Julien Maury
+ */
+function dropit_get_options() {
+
+	$defaults = apply_filters( 'dropit_default_options', array(
+		'modules_enabled' => array(
+			'giphy'    => '1',
+			'unsplash' => '1',
+		),
+	) );
+
+	return wp_parse_args( (array) get_option( 'dropit_options' ), $defaults );
 }

@@ -7,13 +7,22 @@ import SidebarUnsplash from "./components/unsplash/sidebar";
 import SidebarGiphy from "./components/giphy/sidebar";
 import MenuItemUnsplash from "./components/unsplash/menu-item";
 import MenuItemGiphy from "./components/giphy/menu-item";
+import { isActiveSidebar } from "./components/utils";
 
 const Dropit = () => (
   <Fragment>
-    <SidebarUnsplash />
-    <MenuItemUnsplash />
-    <SidebarGiphy />
-    <MenuItemGiphy />
+  { isActiveSidebar('unsplash') && (
+    <Fragment>
+      <SidebarUnsplash />
+      <MenuItemUnsplash />
+    </Fragment>
+    ) }
+  { isActiveSidebar('giphy') && (
+    <Fragment>
+      <SidebarGiphy />
+      <MenuItemGiphy />
+    </Fragment>
+  ) }
   </Fragment>
 );
 

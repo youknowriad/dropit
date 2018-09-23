@@ -13,6 +13,7 @@
 
  // Some common utilities
 require_once dirname( __FILE__ ) . '/lib/common.php';
+require_once dirname( __FILE__ ) . '/lib/options.php';
 
 // Registering Script Files
 require_once dirname( __FILE__ ) . '/lib/i18n-script.php';
